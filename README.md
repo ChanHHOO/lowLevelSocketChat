@@ -68,17 +68,17 @@
 <table>
 	<tbody>
 		<tr>
-            <td rowspan="6"><div align="center"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/demo.gif" width="40%" height="40%"></a></div></td>
-            <td width="33%">NLP를 이용한 진료과 분류</td>
+            <td rowspan="6"><div align="center"><img src="https://primer.dynamobim.org/ko/10_Custom-Nodes/images/10-4/Exercise/Revit/Images/RevitPython%20-%2006.png" width="40%" height="40%"></a></div></td>
+            <td width="33%">이미지 section</td>
         </tr>
 	<tr>
-	    <td>버튼기반의 편리한 UI/UX 제공</td>
+	    <td>~~~기능제공</td>
 	</tr>
         <tr>
-            <td>병원 예약 기능</td>
+            <td>~~기능</td>
         </tr>
         <tr>
-            <td>상담 연결 및 군 병원 정보를 출력</td>
+            <td>~~~출력</td>
         </tr>
     </tbody>
 </table>
