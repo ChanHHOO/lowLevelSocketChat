@@ -3,8 +3,14 @@
 **_이번 프로젝트 과제_** 는 socket 통신을 구현하여 지정된 기능들을 구현해야한다. Python에서 제공하는 socket 라이브러리를 이용하여 구현하였고, **json 파일을 이용한 파일 입출력**과  **클라이언트가 request 를 보냈을 때 서버가 동작**을 하는것을 보여준다.
 
 ## 🚀 과제 목표
-1. Server side : 유저 정보를 저장하고 유저의 권한에 따라 다른 정보를 제공할 수 있는 API가 구현 되어야 한다.
-2. Client side : API를 요청할 수 있는 기능(fetch)이 구현되어야 한다.
+1. Server side : <br>
+  1-1. 유저 정보를 저장하고 유저의 권한에 따라 다른 정보를 제공할 수 있는 API가 구현 되어야 한다.<br>
+  1-2. 유저 정보는 json file을 이용하여 유지한다.<br>
+  1-3. json file 입출력을 담당할 수 있어야 한다.
+
+2. Client side : <br>
+  2-1. API를 요청할 수 있는 기능(fetch)이 구현되어야 한다.<br>
+  2-2. **thread를 사용하여** 중단되지 않는 서버를 구현한다.<br>
 
 ## 📈 순서도
 ![FlowChart](./media/sunsu.jpeg)
@@ -63,6 +69,9 @@
 ### - HTTP METHOD
 
 #### 1. POST
+- 201 (Create Success) : 새로운 유저 정보를 user json file에 추가한다.
+- 400 (Bad request) : 이메일 혹은 패스워드의 길이가 1이하일 경우 400을 반환한다.
+
 - 200(login Success) : user json file에서 사용자의 아이디와 비밀번호를 받아 로그인 성공 정보와 권한 정보를 반환한다. (권한 정보 : 1. 관리자 / 2. 일반 유저)
 - 401(login Fail) : 등록되지 않은 유저정보로 로그인을 시도할 경우 401을 반환한다.
 
@@ -72,8 +81,8 @@
 - 403(Forbidden) : 로그인이 되지 않은 클라이언트가 요청할 시 403을 반환한다..
 
 #### 3. PUT
-- 201 (Create Success) : 새로운 유저 정보를 user json file에 추가한다.
-- 400 (Bad request) : 이메일 혹은 패스워드의 길이가 1이하일 경우 400을 반환한다.
+- 200 (modify success) : 
+- 404 (user not found) :
 
 #### 4. HEAD
 - 200(Success) : server의 현재 상태를 반환한다.
@@ -85,7 +94,27 @@
 - 시연영상 <br>
 https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=sharing
 
-와이어샤크를 이용하여, syn bit를 시작으로 tcp 연결 후 fin bit를 이용하여 연결을 끊는 장면이 포함되어 있습니다. 
+> 와이어샤크를 이용하여, syn bit를 시작으로 tcp 연결 후 fin bit를 이용하여 연결을 끊는 장면이 포함되어 있습니다. 
+
+### http method 실행 결과 (좌측 이미지 : server side 수신 화면, 우측 이미지 : client 수신 화면)
+
+- POST (insert new user data) <br>
+<table>
+	<tbody>
+		<tr>
+            <td rowspan="6">
+                <div align="center">
+                    <img src="./media/실행결과/post_server.png" width="40%" height="40%">
+                    <img src="./media/실행결과/put_client.png "width="40%" height="40%">
+                </div>
+            </td>
+            <td width="33%"></td>
+        </tr>
+	<tr>
+	    <td>유저 정보 삽입기능</td>
+	</tr>
+    </tbody>
+</table>
 
 - POST (login) <br>
 <table>
@@ -150,6 +179,60 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
     </tbody>
 </table>
 
+- HEAD (return server head)) <br>
+<table>
+	<tbody>
+		<tr>
+            <td rowspan="6">
+                <div align="center">
+                    <img src="./media/실행결과/put_server.png" width="40%" height="40%">
+                    <img src="./media/실행결과/head_client.png "width="40%" height="40%">
+                </div>
+            </td>
+            <td width="33%"></td>
+        </tr>
+	<tr>
+	    <td>서버정보 반환기능 (not contain body)</td>
+	</tr>
+    </tbody>
+</table>
+
+### put 수행 후 json file이 수정된 화면
+
+- before
+<table>
+	<tbody>
+		<tr>
+            <td rowspan="6">
+                <div align="center">
+                    <img src="./media/실행결과/before.png" width="60%" height="40%">
+                </div>
+            </td>
+            <td width="33%"></td>
+        </tr>
+	<tr>
+	    <td>마지막 id 가 7인 것을 확인할 수 있음</td>
+	</tr>
+    </tbody>
+</table>
+
+- after
+<table>
+	<tbody>
+		<tr>
+            <td rowspan="6">
+                <div align="center">
+                    <img src="./media/실행결과/after.png" width="60%" height="40%">
+                </div>
+            </td>
+            <td width="33%"></td>
+        </tr>
+	<tr>
+	    <td>마지막 id 가 8로 변경</td>
+	</tr>
+    </tbody>
+</table>
+
 ### + plus(error status code)
 
 - 401 Unauthorized <br>
@@ -158,7 +241,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/post_unauthorized.png" width="60%" height="40%">
+                    <img src="./media/실행결과/401.png" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -175,7 +258,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/put_badRequest.png" width="60%" height="40%">
+                    <img src="./media/실행결과/400.png" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -192,7 +275,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/get_Forbidden.png" width="60%" height="40%">
+                    <img src="./media/실행결과/403.png" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>

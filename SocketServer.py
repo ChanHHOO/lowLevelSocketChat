@@ -47,7 +47,6 @@ try:
             # get all user data
             with open('./users.json', 'r+', encoding='utf-8') as f:
                 json_data = json.load(f)
-                #print(json.dumps(json_data))
 
             if method == "GET":
                 # login admin
@@ -55,77 +54,95 @@ try:
                     if isAdmin:
                         # if admin
                         json_to_str = str(json_data)
-                        message = message.format(200, time.ctime(time.time()), len(json_to_str), json_to_str)
+                        message = message.format("200", time.ctime(time.time()), len(json_to_str), json_to_str)
                     else:
                         # if user
                         json_to_str = str(json_data["users"][userId-1])
-                        message = message.format(200, time.ctime(time.time()), len(json_to_str), json_to_str)
+                        message = message.format("200", time.ctime(time.time()), len(json_to_str), json_to_str)
                 else:
                     # if not login
                     err = "Forbidden"
-                    message = message.format(403, time.ctime(time.time()), len(err), err)
+                    message = message.format("403", time.ctime(time.time()), len(err), err)
 
                 client_socket.send(message.encode())
                 
             elif method == "HEAD":
                 msg = ""
                 message = message.format(
-                    200, time.ctime(time.time()), len(msg), msg)
-                client_socket.send(message[:153].encode())
+                    "200", time.ctime(time.time()), len(msg), msg)
+                client_socket.send(message[:-5].encode())
 
             else:
                 # get data that user sended
                 body = request[-1][5:].split(",")
+
                 if method == "POST":  # signin
-                    # is admin?
-                    isAdmin = True if (body[0] == json_data["users"][0]["email"] and body[1] == json_data["users"][0]["password"]) else False
-                    
-                    if isAdmin:
-                        isLogin = True
-                        msg = "Success Login. you are admin"
-                        message = message.format(200, time.ctime(time.time()), len(msg), msg)
-                        client_socket.send(message.encode())
-                    else:
-                        # try login
-                        for user in json_data["users"]:
-                            if user['email'] == body[0] and user['password'] == body[1]:
-                                # if exist user info
-                                isLogin = True
-                                isAdmin = False
-                                userId = user["id"]
-
-                                msg = "Success Login. you are user"
-                                message = message.format(200, time.ctime(time.time()), len(msg), msg)
-                                client_socket.send(message.encode())
-                                break
-                                
-                        else:
-                            # if does not exist user info
-                            msg = "Unauthorized"
-                            message = message.format(401, time.ctime(time.time()), len(msg), msg)
+                    if body[2] == "login":
+                        # is admin?
+                        isAdmin = True if (body[0] == json_data["users"][0]["email"] and body[1] == json_data["users"][0]["password"]) else False
+                        
+                        if isAdmin:
+                            isLogin = True
+                            msg = "Success Login. you are admin"
+                            message = message.format("200", time.ctime(time.time()), len(msg), msg)
                             client_socket.send(message.encode())
+                        else:
+                            # try login
+                            for user in json_data["users"]:
+                                if user['email'] == body[0] and user['password'] == body[1]:
+                                    # if exist user info
+                                    isLogin = True
+                                    isAdmin = False
+                                    userId = user["id"]
 
-                elif method == "PUT":  # signup
-
-                    if len(body[0]) < 1 or len(body[0]) < 1 :
-                        msg = "Bad reqeust"
-                        message = message.format(400, time.ctime(time.time()), len(msg), msg)
+                                    msg = "Success Login. you are user"
+                                    message = message.format("200", time.ctime(time.time()), len(msg), msg)
+                                    client_socket.send(message.encode())
+                                    break
+                                    
+                            else:
+                                # if does not exist user info
+                                msg = "Unauthorized"
+                                message = message.format("401", time.ctime(time.time()), len(msg), msg)
+                                client_socket.send(message.encode())
                     else:
-                        msg = "Success create user"
+                        # signup
 
-                        message = message.format(201, time.ctime(time.time()), len(msg), msg)
+                        if len(body[0]) < 1 or len(body[0]) < 1 :
+                            msg = "Bad reqeust"
+                            message = message.format("400", time.ctime(time.time()), len(msg), msg)
+                        else:
+                            msg = "Success create user"
 
-                        newUser = {'id':len(json_data["users"])+1, 'email':body[0], 'password':body[1]}
+                            message = message.format("201", time.ctime(time.time()), len(msg), msg)
 
-                        json_data["users"].append(newUser)
+                            newUser = {'id':len(json_data["users"])+1, 'email':body[0], 'password':body[1]}
+
+                            json_data["users"].append(newUser)
+
+                            with open('./users.json', 'w', encoding='utf-8') as f:
+                                json.dump(json_data, f, indent="\t")
+
+                        client_socket.send(message.encode())
+
+                elif method == "PUT":
+                    if len(json_data["users"]) <= int(body[2]):
+                        msg = "can not found user"
+
+                        message = message.format("404", time.ctime(time.time()), len(msg), msg)
+                    else:
+
+                        msg = "Success modify user"
+
+                        message = message.format("200", time.ctime(time.time()), len(msg), msg)
+
+                        json_data["users"][int(body[2])-1]["email"] = body[0] or ""
+                        json_data["users"][int(body[2])-1]["password"] = body[1] or ""
 
                         with open('./users.json', 'w', encoding='utf-8') as f:
                             json.dump(json_data, f, indent="\t")
-
+                    
                     client_socket.send(message.encode())
-
-
-
                 continue
 
         except ConnectionResetError as e:

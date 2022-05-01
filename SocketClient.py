@@ -3,8 +3,8 @@ from _thread import *
 import json
 import time
 
-HOST = '192.168.55.35'
-# HOST = '127.0.0.1'
+# HOST = '192.168.55.35'
+HOST = '127.0.0.1'
 PORT = 9999
 
 client_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -28,7 +28,7 @@ print ('>> Connect Server')
 
 mehods = ["POST", "GET", "PUT", "HEAD"]
 while True:
-    message = "{}\r\nHTTP/1.1\r\nUser-Agent:python3(macOS)\r\nAccept:*/*\r\nnCache-Control: no=cache\r\nnHost: 192.168.55.82\r\nConnection: keep-alive\r\nContent-Length:{}"
+    message = "{} HTTP/1.1\r\nUser-Agent:python3(macOS)\r\nAccept:*/*\r\nAccept-Charset: utf-8\r\nnCache-Control: no=cache\r\nnHost: 192.168.55.82\r\nConnection: keep-alive\r\nContent-Length:{}"
     user = ""
     print("choose http method")
     methodNum = int(input("1.POST / 2.GET / 3.PUT / 4.HEAD : "))
@@ -40,11 +40,20 @@ while True:
 
     else:
         # input user info
+ 
+            
         email = input("insert email : ")
         password = ","+input("insert password : ")
 
-        # user info mapping using tuple
         user = "\r\n\r\nuser:" + email + password
+
+        if method == "POST":
+            postOption = input("input login or signup : ")
+            user += ","+postOption
+        if method == "PUT":
+            putOption = input("input id :")
+            user += ","+putOption
+
         message = message.format(method, len(user))
         message += user
 
