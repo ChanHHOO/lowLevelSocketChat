@@ -278,7 +278,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/401.PNG" width="60%" height="40%">
+                    <img src="./media/실행결과/401.png" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -295,7 +295,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/400.PNG" width="60%" height="40%">
+                    <img src="./media/실행결과/400.png" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -312,7 +312,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/403.PNG" width="60%" height="40%">
+                    <img src="./media/실행결과/403.png" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -328,7 +328,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/404.PNG" width="60%" height="40%">
+                    <img src="./media/실행결과/404.png" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
