@@ -104,7 +104,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/login_server.png" width="40%" height="50%">
+                    <img src="./media/실행결과/login_server.PNG" width="40%" height="50%">
                     <img src="./media/실행결과/signup_client.png "width="40%" height="40%">
                 </div>
             </td>
@@ -122,7 +122,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/login_server.png" width="40%" height="50%">
+                    <img src="./media/실행결과/login_server.PNG" width="40%" height="50%">
                     <img src="./media/실행결과/login_client.png "width="40%" height="40%">
                 </div>
             </td>
