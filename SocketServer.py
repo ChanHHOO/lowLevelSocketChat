@@ -5,7 +5,7 @@ import time
 client_sockets = [] # 서버에 접속한 클라이언트 목록
 
 # 서버 IP 및 열어줄 포트
-HOST = '127.0.0.1'
+HOST = '0.0.0.0'
 PORT = 9999
 
 # cookie 로 사용할 데이터
@@ -28,13 +28,13 @@ try:
     client_sockets.append(client_socket)
     while True:
         print('>> Wait')
-        message = "HTTP/1.1 {}\r\n Date:{}\r\nserver:Python3(macOs)\r\nAccept-Ranges:bytes\r\nContent-Length:{}\r\nConnection:Keep-Alive\r\nContent-Type:text/json\r\n\r\ndata:{}"
+        message = "HTTP/1.1 {}\r\nDate:{}\r\nServer:Python3(windows10x64)\r\nAccept-Ranges:bytes\r\nContent-Length:{}\r\nKeep-Alive: timeout=10, max=100\r\nConnection: Keep-Alive\r\nContent-Type:text/json\r\n\r\ndata:{}"
         status = 200
         contentLength = 0
         try:
             # 데이터가 수신되면 클라이언트에 다시 전송합니다.(에코)
             data = client_socket.recv(1024)
-            print(data)
+            print(data.decode())
             if not data:
                 print('>> Disconnected by ' + addr[0], ':', addr[1])
                 break

@@ -3,7 +3,8 @@ from _thread import *
 import json
 import time
 
-HOST = '127.0.0.1'
+HOST = '192.168.55.35'
+# HOST = '127.0.0.1'
 PORT = 9999
 
 client_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -17,7 +18,7 @@ def recv_data(client_socket) :
         
         data = client_socket.recv(1024)
         
-        print(data)
+        print(data.decode())
 
         print("\n===========================================================")
 
@@ -27,7 +28,7 @@ print ('>> Connect Server')
 
 mehods = ["POST", "GET", "PUT", "HEAD"]
 while True:
-    message = "{} /? HTTP/1.1\r\nUser-Agent:python3(macOS)\r\nAccept:*/*\r\nnCache-Control: no=cache\r\nnHost: 127.0.0.1\r\nConnection: keep-alive\r\nContent-Length:{}"
+    message = "{}\r\nHTTP/1.1\r\nUser-Agent:python3(macOS)\r\nAccept:*/*\r\nnCache-Control: no=cache\r\nnHost: 192.168.55.82\r\nConnection: keep-alive\r\nContent-Length:{}"
     user = ""
     print("choose http method")
     methodNum = int(input("1.POST / 2.GET / 3.PUT / 4.HEAD : "))

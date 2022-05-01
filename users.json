@@ -29,6 +29,11 @@
 			"id": 6,
 			"email": "ccc@ccc.com",
 			"password": "ccc"
+		},
+		{
+			"id": 7,
+			"email": "wa@wa.com",
+			"password": "wa"
 		}
 	]
 }
