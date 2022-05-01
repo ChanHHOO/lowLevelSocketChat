@@ -143,7 +143,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/get_server.png" width="40%" height="40%">
+                    <img src="./media/실행결과/get_server.PNG" width="40%" height="40%">
                     <img src="./media/실행결과/get_client.png "width="40%" height="50%">
                 </div>
             </td>
@@ -167,7 +167,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/put_server.png" width="40%" height="40%">
+                    <img src="./media/실행결과/put_server.PNG" width="40%" height="40%">
                     <img src="./media/실행결과/put_client.png "width="40%" height="40%">
                 </div>
             </td>
@@ -185,7 +185,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/head_server.png" width="40%" height="40%">
+                    <img src="./media/실행결과/head_server.PNG" width="40%" height="40%">
                     <img src="./media/실행결과/head_client.png "width="40%" height="40%">
                 </div>
             </td>
@@ -205,7 +205,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/signup_before.png" width="60%" height="40%">
+                    <img src="./media/실행결과/signup_before.PNG" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -222,7 +222,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/signup_after.png" width="60%" height="40%">
+                    <img src="./media/실행결과/signup_after.PNG" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -242,7 +242,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/put_before.png" width="60%" height="40%">
+                    <img src="./media/실행결과/put_before.PNG" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -259,7 +259,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/put_after.png" width="60%" height="40%">
+                    <img src="./media/실행결과/put_after.PNG" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -278,7 +278,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/401.png" width="60%" height="40%">
+                    <img src="./media/실행결과/401.PNG" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -295,7 +295,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/400.png" width="60%" height="40%">
+                    <img src="./media/실행결과/400.PNG" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -312,7 +312,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/403.png" width="60%" height="40%">
+                    <img src="./media/실행결과/403.PNG" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -328,7 +328,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/404.png" width="60%" height="40%">
+                    <img src="./media/실행결과/404.PNG" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
