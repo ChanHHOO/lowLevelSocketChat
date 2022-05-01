@@ -106,6 +106,7 @@ try:
                                 message = message.format("401", time.ctime(time.time()), len(msg), msg)
                                 client_socket.send(message.encode())
                     else:
+                        # post == true, signup == true
                         # signup
 
                         if len(body[0]) < 1 or len(body[0]) < 1 :

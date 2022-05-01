@@ -81,8 +81,8 @@
 - 403(Forbidden) : 로그인이 되지 않은 클라이언트가 요청할 시 403을 반환한다..
 
 #### 3. PUT
-- 200 (modify success) : 
-- 404 (user not found) :
+- 200 (modify success) : 유저정보 수정이 완료됨.
+- 404 (user not found) : 수정할 유저의 아이디가 존재하지 않을 때 404를 반환한다. 
 
 #### 4. HEAD
 - 200(Success) : server의 현재 상태를 반환한다.
@@ -104,8 +104,8 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/post_server.png" width="40%" height="40%">
-                    <img src="./media/실행결과/put_client.png "width="40%" height="40%">
+                    <img src="./media/실행결과/login_server.png" width="40%" height="50%">
+                    <img src="./media/실행결과/signup_client.png "width="40%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -122,8 +122,8 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/post_server.png" width="40%" height="40%">
-                    <img src="./media/실행결과/post_client.png "width="40%" height="40%">
+                    <img src="./media/실행결과/login_server.png" width="40%" height="50%">
+                    <img src="./media/실행결과/login_client.png "width="40%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -144,7 +144,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
             <td rowspan="6">
                 <div align="center">
                     <img src="./media/실행결과/get_server.png" width="40%" height="40%">
-                    <img src="./media/실행결과/get_client.png "width="40%" height="40%">
+                    <img src="./media/실행결과/get_client.png "width="40%" height="50%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -174,7 +174,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
             <td width="33%"></td>
         </tr>
 	<tr>
-	    <td>유저 정보 삽입기능</td>
+	    <td>유저 정보 수정기능</td>
 	</tr>
     </tbody>
 </table>
@@ -185,7 +185,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/put_server.png" width="40%" height="40%">
+                    <img src="./media/실행결과/head_server.png" width="40%" height="40%">
                     <img src="./media/실행결과/head_client.png "width="40%" height="40%">
                 </div>
             </td>
@@ -197,7 +197,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
     </tbody>
 </table>
 
-### put 수행 후 json file이 수정된 화면
+### post signup 수행 후 json file이 수정된 화면
 
 - before
 <table>
@@ -205,13 +205,13 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/before.png" width="60%" height="40%">
+                    <img src="./media/실행결과/signup_before.png" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
         </tr>
 	<tr>
-	    <td>마지막 id 가 7인 것을 확인할 수 있음</td>
+	    <td>마지막 id가 8인 것을 확인할 수 있음</td>
 	</tr>
     </tbody>
 </table>
@@ -222,13 +222,50 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/after.png" width="60%" height="40%">
+                    <img src="./media/실행결과/signup_after.png" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
         </tr>
 	<tr>
-	    <td>마지막 id 가 8로 변경</td>
+	    <td> id 가 9인 유저 추가</td>
+	</tr>
+    </tbody>
+</table>
+
+
+### put 수행 후 json file이 수정된 화면
+
+- before
+<table>
+	<tbody>
+		<tr>
+            <td rowspan="6">
+                <div align="center">
+                    <img src="./media/실행결과/put_before.png" width="60%" height="40%">
+                </div>
+            </td>
+            <td width="33%"></td>
+        </tr>
+	<tr>
+	    <td>id = 4 인 유저의 이메일이 c@c.com인 것을 확인할 수 있음</td>
+	</tr>
+    </tbody>
+</table>
+
+- after
+<table>
+	<tbody>
+		<tr>
+            <td rowspan="6">
+                <div align="center">
+                    <img src="./media/실행결과/put_after.png" width="60%" height="40%">
+                </div>
+            </td>
+            <td width="33%"></td>
+        </tr>
+	<tr>
+	    <td>id = 4인 유저의 이메일이 m@m.com으로 변경</td>
 	</tr>
     </tbody>
 </table>
@@ -285,7 +322,22 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 	</tr>
     </tbody>
 </table>
-
+- 404 Notfount<br>
+<table>
+	<tbody>
+		<tr>
+            <td rowspan="6">
+                <div align="center">
+                    <img src="./media/실행결과/404.png" width="60%" height="40%">
+                </div>
+            </td>
+            <td width="33%"></td>
+        </tr>
+	<tr>
+	    <td>존재하지 않은 유저를 수정할 경우</td>
+	</tr>
+    </tbody>
+</table>
 ---
 
 ## 🦈 WireShark 캡쳐 화면 
@@ -308,16 +360,16 @@ server_socket.listen()
 > 서버 소켓 생성
 
 ```
-elif method == "PUT":  # signup
+    # post == true, signup == true
+    # signup
 
     if len(body[0]) < 1 or len(body[0]) < 1 :
         msg = "Bad reqeust"
-        message = message.format(400, time.ctime(time.time()), len(msg), msg)
+        message = message.format("400", time.ctime(time.time()), len(msg), msg)
     else:
         msg = "Success create user"
 
-        message = message.format(201, time.ctime(time.time()), len(msg), msg)
-
+        message = message.format("201", time.ctime(time.time()), len(msg), msg)
         newUser = {'id':len(json_data["users"])+1, 'email':body[0], 'password':body[1]}
 
         json_data["users"].append(newUser)
@@ -325,10 +377,10 @@ elif method == "PUT":  # signup
         with open('./users.json', 'w', encoding='utf-8') as f:
             json.dump(json_data, f, indent="\t")
 
-        client_socket.send(message.encode())
-
+    client_socket.send(message.encode())
 ```
-> http method 처리 코드 중 put 처리 과정. 요청에 따라 json 파일을 수정하고 클라이언트에게 필요한 정보를 반환함.
+
+> http method 처리 코드 중 post signup 처리 과정. 요청에 따라 json 파일을 수정하고 클라이언트에게 필요한 정보를 반환함.
 
 ```
 isAdmin = False
@@ -367,14 +419,21 @@ start_new_thread(recv_data, (client_socket,))
 ```
 message = "{} /? HTTP/1.1\r\nUser-Agent:python3(macOS)\r\nAccept:*/*\r\nnCache-Control: no=cache\r\nnHost: 192.168.55.82\r\nConnection: keep-alive\r\nContent-Length:{}"
 
-# input user info
 email = input("insert email : ")
 password = ","+input("insert password : ")
 
-# user info mapping using tuple
 user = "\r\n\r\nuser:" + email + password
+
+if method == "POST":
+    postOption = input("input login or signup : ")
+    user += ","+postOption
+if method == "PUT":
+    putOption = input("input id :")
+    user += ","+putOption
+
 message = message.format(method, len(user))
 message += user
+
 
 client_socket.send(message.encode())
 ```
