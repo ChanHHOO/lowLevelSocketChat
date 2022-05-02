@@ -1,5 +1,5 @@
 # cumputer network first project (develop socket connection)
-
+<a href="https://github.com/ChanHHOO/network_class">Github link</a><br>
 **_이번 프로젝트 과제_** 는 socket 통신을 구현하여 지정된 기능들을 구현해야한다. Python에서 제공하는 socket 라이브러리를 이용하여 구현하였고, **json 파일을 이용한 파일 입출력**과  **클라이언트가 request 를 보냈을 때 서버가 동작**을 하는것을 보여준다.
 
 ## 🚀 과제 목표
@@ -104,7 +104,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/login_server.png" width="40%" height="50%">
+                    <img src="./media/실행결과/login_server.PNG" width="40%" height="50%">
                     <img src="./media/실행결과/signup_client.png "width="40%" height="40%">
                 </div>
             </td>
@@ -122,7 +122,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/login_server.png" width="40%" height="50%">
+                    <img src="./media/실행결과/login_server.PNG" width="40%" height="50%">
                     <img src="./media/실행결과/login_client.png "width="40%" height="40%">
                 </div>
             </td>
@@ -143,7 +143,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/get_server.png" width="40%" height="40%">
+                    <img src="./media/실행결과/get_server.PNG" width="40%" height="40%">
                     <img src="./media/실행결과/get_client.png "width="40%" height="50%">
                 </div>
             </td>
@@ -167,7 +167,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/put_server.png" width="40%" height="40%">
+                    <img src="./media/실행결과/put_server.PNG" width="40%" height="40%">
                     <img src="./media/실행결과/put_client.png "width="40%" height="40%">
                 </div>
             </td>
@@ -185,7 +185,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/head_server.png" width="40%" height="40%">
+                    <img src="./media/실행결과/head_server.PNG" width="40%" height="40%">
                     <img src="./media/실행결과/head_client.png "width="40%" height="40%">
                 </div>
             </td>
@@ -205,7 +205,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/signup_before.png" width="60%" height="40%">
+                    <img src="./media/실행결과/signup_before.PNG" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -222,7 +222,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/signup_after.png" width="60%" height="40%">
+                    <img src="./media/실행결과/signup_after.PNG" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -242,7 +242,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/put_before.png" width="60%" height="40%">
+                    <img src="./media/실행결과/put_before.PNG" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -259,7 +259,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 		<tr>
             <td rowspan="6">
                 <div align="center">
-                    <img src="./media/실행결과/put_after.png" width="60%" height="40%">
+                    <img src="./media/실행결과/put_after.PNG" width="60%" height="40%">
                 </div>
             </td>
             <td width="33%"></td>
@@ -322,7 +322,7 @@ https://drive.google.com/file/d/1JNYEhKIRmWh_NpFFiZFYKInnsjCtHXjh/view?usp=shari
 	</tr>
     </tbody>
 </table>
-- 404 Notfount<br>
+- 404 Not found<br>
 <table>
 	<tbody>
 		<tr>
