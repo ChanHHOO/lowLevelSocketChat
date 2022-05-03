@@ -3,9 +3,9 @@ from _thread import *
 import json
 import time
 
-HOST = '192.168.55.35'
-# HOST = '127.0.0.1'
-PORT = 9999
+# HOST = '192.168.55.35'
+HOST = '127.0.0.1'
+PORT = 10000
 
 client_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 client_socket.connect((HOST, PORT))
@@ -28,7 +28,7 @@ print ('>> Connect Server')
 
 mehods = ["POST", "GET", "PUT", "HEAD"]
 while True:
-    message = "{} HTTP/1.1\r\nHost: 192.168.45.211\r\nUser-Agent: M1PRO\r\nAccept: json ,application/xhtml+xml\r\nAccept-Language: kr\r\nKeep-Alive: 50\r\nConnection: keep-alive"
+    message = "{} / HTTP/1.1\r\nHost: 127.0.0.1/\r\nContent-Type: text/html\r\nConnection: keep-alive\r\nContent-Length: {}"
     # message = "{} HTTP/1.1\r\nUser-Agent:python3(macOS)\r\nAccept:*/*\r\nAccept-Charset: utf-8\r\nnCache-Control: no=cache\r\nnHost: 192.168.55.82\r\nConnection: keep-alive\r\nContent-Length:{}"
     user = ""
     print("choose http method")
@@ -62,7 +62,7 @@ while True:
         close_data = user
         break
     
-    client_socket.send(message.encode())
+    client_socket.sendall(message.encode())
 
     # 쓰레드 별 출력 시간이 달라 잠시 대기
     time.sleep(0.1)

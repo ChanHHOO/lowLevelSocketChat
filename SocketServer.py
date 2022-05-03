@@ -6,7 +6,7 @@ client_sockets = [] # 서버에 접속한 클라이언트 목록
 
 # 서버 IP 및 열어줄 포트
 HOST = '0.0.0.0'
-PORT = 9999
+PORT = 10000
 
 # cookie 로 사용할 데이터
 isAdmin = False
@@ -28,8 +28,10 @@ try:
     client_sockets.append(client_socket)
     while True:
         print('>> Wait')
-        message = "HTTP/1.1{}\r\nDate: {}\r\nServer: Python3(windows10)\r\nContent-Length: {}\r\nkeep-Alive: timeout=10, max100\r\nConnection: Keep-Alive\r\nContent-Type: json\r\n\r\n{}"
-        # message = "HTTP/1.1 {}\r\nDate:{}\r\nServer:Python3(windows10x64)\r\nAccept-Ranges:bytes\r\nContent-Length:{}\r\nKeep-Alive: timeout=10, max=100\r\nConnection: Keep-Alive\r\nContent-Type:text/json\r\n\r\ndata:{}"
+
+        #\r\nDate:{}\r\nServer:Python3(windows10x64)\r\nAccept-Ranges:bytes\r\nContent-Length:{}\r\nKeep-Alive: timeout=10, max=100\r\nConnection: Keep-Alive
+        
+        message = "HTTP/1.1 {}\r\nContent-Type:text/html\r\nConnection: keep-alive\r\nContent-Length:{}\r\nDate: {} \r\n\r\n{}"
         status = 200
         contentLength = 0
         try:
@@ -55,22 +57,23 @@ try:
                     if isAdmin:
                         # if admin
                         json_to_str = str(json_data)
-                        message = message.format("200 OK", time.ctime(time.time()), len(json_to_str), json_to_str)
+                        date = time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.localtime(time.time()))
+                        message = message.format("200 OK", len(json_to_str), date, json_to_str)
                     else:
                         # if user
                         json_to_str = str(json_data["users"][userId-1])
-                        message = message.format("200 OK", time.ctime(time.time()), len(json_to_str), json_to_str)
+                        message = message.format("200 OK", len(json_to_str), date, json_to_str)
                 else:
                     # if not login
                     err = "Forbidden"
-                    message = message.format("403", time.ctime(time.time()), len(err), err)
+                    message = message.format("403 Forbidden", len(err), date, err)
 
                 client_socket.send(message.encode())
                 
             elif method == "HEAD":
                 msg = ""
                 message = message.format(
-                    "200", time.ctime(time.time()), len(msg), msg)
+                    "200 OK", len(msg), date, msg)
                 client_socket.send(message[:-5].encode())
 
             else:
@@ -85,7 +88,8 @@ try:
                         if isAdmin:
                             isLogin = True
                             msg = "Success Login. you are admin"
-                            message = message.format("200 OK", time.ctime(time.time()), len(msg), msg)
+                            date = time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.localtime(time.time()))
+                            message = message.format("200 OK", len(msg),date, msg)
                             client_socket.send(message.encode())
                         else:
                             # try login
@@ -97,26 +101,29 @@ try:
                                     userId = user["id"]
 
                                     msg = "Success Login. you are user"
-                                    message = message.format("200", time.ctime(time.time()), len(msg), msg)
+                                    date = time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.localtime(time.time()))
+                                    message = message.format("200 OK", len(msg), date, msg)
                                     client_socket.send(message.encode())
                                     break
                                     
                             else:
                                 # if does not exist user info
-                                msg = "Unauthorized"
-                                message = message.format("401", time.ctime(time.time()), len(msg), msg)
+                                msg = ""
+                                date = time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.localtime(time.time()))
+                                message = message.format("401 Unauthorized", len(msg), date, "")
                                 client_socket.send(message.encode())
                     else:
                         # post == true, signup == true
                         # signup
 
                         if len(body[0]) < 1 or len(body[0]) < 1 :
-                            msg = "Bad reqeust"
-                            message = message.format("400", time.ctime(time.time()), len(msg), msg)
+                            msg = ""
+                            date = time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.localtime(time.time()))
+                            message = message.format("400 Bad Request", len(msg), date, msg)
                         else:
                             msg = "Success create user"
 
-                            message = message.format("201", time.ctime(time.time()), len(msg), msg)
+                            message = message.format("201 created", len(msg), date, msg)
 
                             newUser = {'id':len(json_data["users"])+1, 'email':body[0], 'password':body[1]}
 
@@ -130,13 +137,13 @@ try:
                 elif method == "PUT":
                     if len(json_data["users"]) <= int(body[2]):
                         msg = "can not found user"
-
-                        message = message.format("404", time.ctime(time.time()), len(msg), msg)
+                        date = time.strftime('%a, %d %b %Y %H:%M:%S GMT', time.localtime(time.time()))
+                        message = message.format("404 not found", len(msg), date, msg)
                     else:
 
                         msg = "Success modify user"
 
-                        message = message.format("200", time.ctime(time.time()), len(msg), msg)
+                        message = message.format("200 OK", len(msg), date, msg)
 
                         json_data["users"][int(body[2])-1]["email"] = body[0] or ""
                         json_data["users"][int(body[2])-1]["password"] = body[1] or ""
