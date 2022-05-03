@@ -28,7 +28,8 @@ try:
     client_sockets.append(client_socket)
     while True:
         print('>> Wait')
-        message = "HTTP/1.1 {}\r\nDate:{}\r\nServer:Python3(windows10x64)\r\nAccept-Ranges:bytes\r\nContent-Length:{}\r\nKeep-Alive: timeout=10, max=100\r\nConnection: Keep-Alive\r\nContent-Type:text/json\r\n\r\ndata:{}"
+        message = "HTTP/1.1{}\r\nDate: {}\r\nServer: Python3(windows10)\r\nContent-Length: {}\r\nkeep-Alive: timeout=10, max100\r\nConnection: Keep-Alive\r\nContent-Type: json\r\n\r\n{}"
+        # message = "HTTP/1.1 {}\r\nDate:{}\r\nServer:Python3(windows10x64)\r\nAccept-Ranges:bytes\r\nContent-Length:{}\r\nKeep-Alive: timeout=10, max=100\r\nConnection: Keep-Alive\r\nContent-Type:text/json\r\n\r\ndata:{}"
         status = 200
         contentLength = 0
         try:
@@ -54,11 +55,11 @@ try:
                     if isAdmin:
                         # if admin
                         json_to_str = str(json_data)
-                        message = message.format("200", time.ctime(time.time()), len(json_to_str), json_to_str)
+                        message = message.format("200 OK", time.ctime(time.time()), len(json_to_str), json_to_str)
                     else:
                         # if user
                         json_to_str = str(json_data["users"][userId-1])
-                        message = message.format("200", time.ctime(time.time()), len(json_to_str), json_to_str)
+                        message = message.format("200 OK", time.ctime(time.time()), len(json_to_str), json_to_str)
                 else:
                     # if not login
                     err = "Forbidden"
@@ -84,7 +85,7 @@ try:
                         if isAdmin:
                             isLogin = True
                             msg = "Success Login. you are admin"
-                            message = message.format("200", time.ctime(time.time()), len(msg), msg)
+                            message = message.format("200 OK", time.ctime(time.time()), len(msg), msg)
                             client_socket.send(message.encode())
                         else:
                             # try login

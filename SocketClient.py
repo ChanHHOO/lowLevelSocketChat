@@ -28,7 +28,8 @@ print ('>> Connect Server')
 
 mehods = ["POST", "GET", "PUT", "HEAD"]
 while True:
-    message = "{} HTTP/1.1\r\nUser-Agent:python3(macOS)\r\nAccept:*/*\r\nAccept-Charset: utf-8\r\nnCache-Control: no=cache\r\nnHost: 192.168.55.82\r\nConnection: keep-alive\r\nContent-Length:{}"
+    message = "{} HTTP/1.1\r\nHost: 192.168.45.211\r\nUser-Agent: M1PRO\r\nAccept: json ,application/xhtml+xml\r\nAccept-Language: kr\r\nKeep-Alive: 50\r\nConnection: keep-alive"
+    # message = "{} HTTP/1.1\r\nUser-Agent:python3(macOS)\r\nAccept:*/*\r\nAccept-Charset: utf-8\r\nnCache-Control: no=cache\r\nnHost: 192.168.55.82\r\nConnection: keep-alive\r\nContent-Length:{}"
     user = ""
     print("choose http method")
     methodNum = int(input("1.POST / 2.GET / 3.PUT / 4.HEAD : "))
